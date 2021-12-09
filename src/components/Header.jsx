@@ -25,25 +25,16 @@ const Header = () => {
       const data = formatedResponse['cc-btc-usd-cccagg']
       setData(data)
     }
-    return () => {
-      ws.onclose = () => {
-        const msg = {
-          type: 'UNSUBSCRIBE',
-          instruments: ['cc-btc-usd-cccagg'],
-        }
-        ws.send(JSON.stringify(msg))
-      }
-      ws.close()
-    }
+    return () => ws.close()
   }, [])
 
   const changeStatus = () => {
     if (data?.change > 0) {
-      return 'green'
+      return '#009624'
     } else if (data?.change < 0) {
-      return 'red'
+      return '#d91e18'
     } else {
-      return 'gray'
+      return '#9e9e9e'
     }
   }
 

@@ -44,13 +44,13 @@ const Table = ({ titles, content }) => {
       </thead>
 
       <tbody>
-        {content?.map((cell, index) => (
+        {content?.map(({ Date, High, Low, Open, Close }, index) => (
           <tr key={index}>
-            {cell[titles[index]] ? (
-              <td>{cell[titles[index]].toFixed(2)}</td>
-            ) : (
-              <td>{moment(cell[titles[index]])}</td>
-            )}
+            <td>{moment(Date).format('lll')}</td>
+            <td>{High.toFixed(2)}</td>
+            <td>{Low.toFixed(2)}</td>
+            <td>{Open.toFixed(2)}</td>
+            <td>{Close.toFixed(2)}</td>
           </tr>
         ))}
       </tbody>

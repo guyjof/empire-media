@@ -28,7 +28,7 @@ const Overview = () => {
             dataKey='Close'
             stroke='blue'
             fillOpacity={1}
-            fill='#005ca31a'
+            fill='#d0e2f81a'
           />
         </AreaChart>
       </Container>
